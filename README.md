@@ -92,21 +92,30 @@ CREATE TABLE users (
 
 ---
 
-## 2.3 Add `config.py`
+## 2.3 Add Configuration File
 
-Create a `config.py` file for database connection:
+* Copy `example_config.py` to `config.py` in the project root:
+
+```bash
+cp example_config.py config.py
+```
+
+* Edit `config.py` with your own credentials:
 
 ```python
 DB_CONFIG = {
     'host': 'localhost',
-    'user': 'root',
-    'password': 'YOUR_PASSWORD_HERE',
+    'user': 'YOUR_DB_USERNAME',
+    'password': 'YOUR_DB_PASSWORD',
     'database': 'secure_chat'
 }
 ```
 
-> ⚠️ Make sure to include `config.py` in `.gitignore` to keep credentials secure.
+* Add `config.py` to `.gitignore` to prevent committing sensitive information:
 
+```bash
+echo "config.py" >> .gitignore
+```
 ---
 
 # 🔑 3. Generate Certificates and Keys
